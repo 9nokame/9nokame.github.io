@@ -233,9 +233,9 @@ body {
 }
 
 .features .feat p {
-  /* text-align: center; */
+  text-align: justify;
   line-height: 1.8;
-  color: #777;
+  color: var(--secondary-color);
   font-size: 17px;
 }
 /* end features */
@@ -337,6 +337,17 @@ body {
   -moz-transition: transform 0.5s;
   -ms-transition: transform 0.5s;
   -o-transition: transform 0.5s;
+}
+
+.portfolio .portfolio-content .card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.portfolio .portfolio-content .card-link:hover .card {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio .portfolio-content .card img {
@@ -465,9 +476,18 @@ body {
   background-color: var(--section-background);
 }
 
+.contact .social {
+  margin: auto;
+  width: 450px;
+  display: flex;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
 .contact .info {
-  padding-top: 50px;
-  padding-bottom: 60px;
+  padding-top: 0px;
+  padding-bottom: 50px;
   text-align: center;
 }
 
@@ -485,16 +505,6 @@ body {
   font-weight: 800;
   color: var(--main-color);
   text-decoration: none;
-}
-
-.contact .info .social {
-  margin: auto;
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  font-size: 16px;
 }
 
 .contact .info i {
