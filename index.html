@@ -23,6 +23,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- GSAP Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP Plugin ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- Title -->
     <title>RNSBS | Running Native Subtitle-Based Studio</title>
   </head>
@@ -283,6 +287,21 @@
         <p class="copyright">© 2025 rnsbs. All Rights Reserved.</p>
       </div>
     </footer>
-    <!-- end footer -->
+    <!--GSAP Script-->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(".about", {
+        scrollTrigger: {
+          trigger: ".contact",
+          start: "top bottom",
+          end: "top center",
+          scrub: true,
+          // markers: true
+        },
+        y: 550,
+        ease: "none",
+      });
+    </script>
   </body>
 </html>
