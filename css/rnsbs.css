@@ -9,6 +9,8 @@
 /* global rules */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -503,6 +505,7 @@ body {
   padding-top: 0px;
   padding-bottom: 50px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .contact .info .label {
@@ -510,7 +513,7 @@ body {
   font-weight: 800;
   color: var(--secondary-color);
   letter-spacing: -2px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .contact .info .link {
