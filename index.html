@@ -23,10 +23,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- GSAP Core -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <!-- GSAP Plugin ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- Title -->
     <title>RNSBS | Running Native Subtitle-Based Studio</title>
   </head>
@@ -99,7 +95,7 @@
     <div class="services" id="services">
       <div class="container">
         <h2 class="special-heading">Services</h2>
-        <p>What we do is dance with our everything</p>
+        <p>We dance with our everything</p>
         <div class="services-content">
           <div class="col">
             <div class="srv">
@@ -184,8 +180,7 @@
                 <h3>4th Gen Documentary</h3>
                 <p>
                   Eight episodes documentary featuring the nine new 4th
-                  generation members of Sakurazaka46, localized for Indonesian
-                  audiences.
+                  generation members of Sakurazaka46, localized into Indonesian.
                 </p>
               </div>
             </div>
@@ -245,7 +240,11 @@
           <p class="label">
             Let us handle the subtitle<br />—so you can keep moving.
           </p>
-          <a href="mailto:rnsbs.team@gmail.com" class="contact-button">
+          <a
+            href="mailto:rnsbs.team@gmail.com"
+            class="contact-button magnet"
+            onclick="party.confetti(this)"
+          >
             Contact Us
           </a>
         </div>
@@ -285,6 +284,14 @@
         <p class="copyright">© 2025 rnsbs. All rights reserved.</p>
       </div>
     </footer>
-    <!-- Script -->
+    <div class="spotlight"></div>
+    <!--Script-->
+    <script src="https://unpkg.com/party-js@latest/bundle/party.min.js"></script>
+    <!-- GSAP core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger plugin-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Main JS file -->
+    <script src="js/main.js"></script>
   </body>
 </html>

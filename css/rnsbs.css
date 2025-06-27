@@ -181,13 +181,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/img/landing.jpg);
+  background-image: url(../assets/img/RNSBS_compact_team_logo_2.png);
   background-size: cover;
+  background-repeat: no-repeat;
   height: calc(100vh - 64px);
 }
 
 .landing .intro-text {
   width: fit-content;
+  z-index: 2;
+  position: relative;
 }
 
 .landing .intro-text h1 {
@@ -210,6 +213,8 @@ body {
   background-color: var(--section-background);
   padding-top: 60px;
   padding-bottom: 60px;
+  /*shadow super halus*/
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .features .container {
@@ -532,11 +537,13 @@ body {
   font-family: "Noto Sans", sans-serif;
   border: 2px solid var(--main-color);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .contact-button:hover {
   background-color: transparent;
   color: var(--main-color);
+  box-shadow: inset 0 0 10px var(--main-color);
 }
 
 @media (max-width: 767px) {
@@ -648,3 +655,16 @@ body {
   }
 }
 /* end footer */
+
+.spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(252, 133, 182) 0%, transparent 80%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  mix-blend-mode: lighten;
+}
