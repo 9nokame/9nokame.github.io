@@ -76,6 +76,9 @@ body {
 /* start header */
 .header {
   padding: 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .header .container {
@@ -244,6 +247,9 @@ body {
 .services {
   padding-top: 60px;
   padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 .services .services-content {
   display: grid;
@@ -384,6 +390,9 @@ body {
 .about {
   padding-top: 60px;
   padding-bottom: 100px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .about .about-content {
@@ -474,17 +483,13 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--section-background);
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .contact .social {
   margin: auto;
-  width: 410px;
+  width: 260px;
   display: flex;
   text-align: center;
-  flex-wrap: wrap;
   margin-top: 40px;
   font-size: 16px;
 }
@@ -550,6 +555,9 @@ body {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   color: #444;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .footer-container {
