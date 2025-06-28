@@ -245,7 +245,7 @@ body {
   text-align: center;
   color: var(--secondary-color);
   font-size: 60px;
-  margin: 0px;
+  transform: translateY(-30px);
 }
 
 .landing .intro-text p {
@@ -253,6 +253,7 @@ body {
   font-size: 20px;
   line-height: 1.8;
   text-align: center;
+  transform: translateY(-30px);
 }
 
 @media (max-width: 768px) {
