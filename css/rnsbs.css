@@ -264,7 +264,7 @@ body {
   }
   .landing .intro-text h1 {
     text-align: left;
-    color: var(--secondary-color);
+    color: #6b7db9;
     margin-left: 20px;
     margin-right: 40px;
     padding-left: 5%;
@@ -742,28 +742,4 @@ body {
   z-index: 999;
   filter: blur(5px);
   mix-blend-mode: lighten;
-}
-
-@media (max-width: 768px) {
-  .spotlight {
-    animation: floatSpotlight 10s infinite alternate ease-in-out;
-  }
-
-  @keyframes floatSpotlight {
-    0% {
-      transform: translate(10%, 10%);
-    }
-    25% {
-      transform: translate(70%, 20%);
-    }
-    50% {
-      transform: translate(30%, 60%);
-    }
-    75% {
-      transform: translate(80%, 80%);
-    }
-    100% {
-      transform: translate(40%, 30%);
-    }
-  }
 }

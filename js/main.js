@@ -14,14 +14,37 @@ contactBtn.addEventListener("click", (e) => {
 
 // SPOTLIGHT MOUSE EFFECT
 
-document.addEventListener("mousemove", (e) => {
-  gsap.to(".spotlight", {
-    x: e.clientX - 75,
-    y: e.clientY - 75,
-    duration: 0.2,
-    ease: "power2.out",
+const spotlight = document.querySelector(".spotlight");
+
+if (window.innerWidth > 768) {
+  // DESKTOP
+  document.addEventListener("mousemove", (e) => {
+    gsap.to(spotlight, {
+      x: e.clientX - 75,
+      y: e.clientY - 75,
+      duration: 0.2,
+      ease: "power2.out",
+    });
   });
-});
+} else {
+  // MOBILE
+  function randomSpotlightMove() {
+    const vw = window.innerWidth - 150;
+    const vh = window.innerHeight - 150;
+    const x = Math.random() * vw;
+    const y = Math.random() * vh;
+
+    gsap.to(spotlight, {
+      x: x,
+      y: y,
+      duration: 5 + Math.random() * 3,
+      ease: "sine.inOut",
+      onComplete: randomSpotlightMove,
+    });
+  }
+
+  randomSpotlightMove();
+}
 
 // BASIC ANIMATIONS
 
