@@ -1,12 +1,19 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// Contact us button confetti
-const btn = document.querySelector(".contact-button");
-btn.addEventListener("mouseenter", () => {
-  party.confetti(btn);
+// BUTTON INTERACTIONS
+
+const contactBtn = document.querySelector(".contact-button");
+
+contactBtn.addEventListener("mouseenter", () => {
+  party.confetti(contactBtn);
 });
 
-// Mouse spotlight
+contactBtn.addEventListener("click", (e) => {
+  createRipple(e);
+});
+
+// SPOTLIGHT MOUSE EFFECT
+
 document.addEventListener("mousemove", (e) => {
   gsap.to(".spotlight", {
     x: e.clientX - 75,
@@ -16,14 +23,14 @@ document.addEventListener("mousemove", (e) => {
   });
 });
 
-// Fade in on load
+// BASIC ANIMATIONS
+
 gsap.from("body", {
   opacity: 0,
   duration: 1.5,
   ease: "power2.out",
 });
 
-// Floating logo
 gsap.to(".logo", {
   y: 5,
   repeat: -1,
@@ -32,7 +39,41 @@ gsap.to(".logo", {
   ease: "sine.inOut",
 });
 
-// Parallax background
+// SCROLL-BASED ANIMATIONS
+
+const scrollFadeIn = (selector, options = {}) => {
+  gsap.from(selector, {
+    scrollTrigger: {
+      trigger: selector,
+      start: "top 85%",
+      toggleActions: "play reverse play reverse", // replay when scrolling
+      ...options.trigger,
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.2,
+    ...options.anim,
+  });
+};
+
+scrollFadeIn(".features .feat");
+scrollFadeIn(".services .col .srv .text", {
+  anim: { y: 20, opacity: 0, scale: 1 },
+});
+scrollFadeIn(".portfolio", {
+  trigger: { start: "top 80%" },
+});
+scrollFadeIn(".about", {
+  anim: { x: 0 },
+});
+scrollFadeIn(".contact", {
+  anim: { y: 30, duration: 1.2 },
+});
+
+// PARALLAX EFFECTS
+
 gsap.to(".landing", {
   backgroundPosition: "center 100%",
   ease: "none",
@@ -44,7 +85,6 @@ gsap.to(".landing", {
   },
 });
 
-// Intro text scroll up
 gsap.to(".intro-text", {
   y: -500,
   ease: "power1.out",
@@ -56,65 +96,7 @@ gsap.to(".intro-text", {
   },
 });
 
-// Scroll trigger animation
-gsap.from(".features .feat", {
-  scrollTrigger: {
-    trigger: ".features",
-    start: "top 85%",
-  },
-  y: 50,
-  opacity: 0,
-  duration: 1,
-  ease: "power2.out",
-  stagger: 0.2,
-});
-
-gsap.from(".services .col .srv .text", {
-  scrollTrigger: {
-    trigger: ".services",
-    start: "top 85%",
-  },
-  x: -50,
-  opacity: 0,
-  duration: 1,
-  ease: "power2.out",
-  stagger: 0.2,
-});
-
-gsap.from(".portfolio", {
-  scrollTrigger: {
-    trigger: ".portfolio",
-    start: "top 80%",
-    toggleActions: "play none none reverse",
-  },
-  y: 50,
-  opacity: 0,
-  duration: 1,
-  ease: "power2.out",
-});
-
-gsap.from(".about", {
-  scrollTrigger: {
-    trigger: ".about",
-    start: "top 80%",
-  },
-  x: -50,
-  opacity: 0,
-  duration: 1,
-  ease: "power2.out",
-  stagger: 0.2,
-});
-
-gsap.from(".contact", {
-  scrollTrigger: {
-    trigger: ".contact",
-    start: "top 85%",
-  },
-  opacity: 0,
-  y: 30,
-  duration: 1.2,
-  ease: "power2.out",
-});
+// MAGNET BUTTON
 
 document.querySelectorAll(".magnet").forEach((btn) => {
   btn.addEventListener("mousemove", function (e) {
