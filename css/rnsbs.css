@@ -231,7 +231,8 @@ body {
   background-image: url(../assets/img/RNSBS_compact_team_logo_2.png);
   background-size: cover;
   background-repeat: no-repeat;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 85px);
+  padding: 80px 20px;
 }
 
 .landing .intro-text {
