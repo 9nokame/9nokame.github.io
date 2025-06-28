@@ -1,10 +1,12 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// Contact us button confetti
 const btn = document.querySelector(".contact-button");
 btn.addEventListener("mouseenter", () => {
   party.confetti(btn);
 });
 
+// Mouse spotlight
 document.addEventListener("mousemove", (e) => {
   gsap.to(".spotlight", {
     x: e.clientX - 75,
@@ -54,7 +56,7 @@ gsap.to(".intro-text", {
   },
 });
 
-// Animation
+// Scroll trigger animation
 gsap.from(".features .feat", {
   scrollTrigger: {
     trigger: ".features",
